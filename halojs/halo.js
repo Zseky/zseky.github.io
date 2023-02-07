@@ -108,7 +108,7 @@
 			$(".qContainer").text(String(valentineQuestions[questionCounter]));
 		} else {
 			hideAll();
-			$(".hContainer").text("I love you Phoebe BB! See you sa valentine's!!! ");
+			$(".hContainer").text("I love you Phoebe BB! See you sa Valentine's Day!!! ");
 			$(".hContainer").append("&#x2665;");
 			$(".hContainer").append("&#x2665;");
 			$(".hContainer").append("&#x2665;");
