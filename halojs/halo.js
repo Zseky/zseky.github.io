@@ -117,9 +117,9 @@
 
 	function sendEmail(x) {
 		Email.send({
-		    SecureToken: "eecbdc2e-b9f9-48cb-b95b-a63855ecc87f",
+		    SecureToken: "0ab5f188-c937-427c-a524-d8e83b2821da",
 		    To : 'zj.labasano@gmail.com',
-		    From : "zj.labasano@gmail.com",
+		    From : "zandlabasano@gmail.com",
 		    Subject : "Valentine Notif",
 		    Body : String(x)
 		}).then(
