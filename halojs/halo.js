@@ -4,7 +4,7 @@
 		1: "Is this Phoebe?",
 		2: "Sure? Like, Phoebe Kate Suyao Maiquilla?",
 		3: "If you truly are Phoebe, I have questions for you.",
-		4: "What is the favorite thing you want us to do together?",
+		4: "What is the favorite thing you have been doing with bb?",
 		5: "Do you love your boyfriend?",
 		6: "Will you be my valentine?"
 	}
@@ -19,7 +19,7 @@
 	const answerNo = false;
 
 	let YNNum = 0;
-	const alertForYN  = ["Only for PB", "For my girlfriend only.","But he loves you so he doesn't care.", "Try again."]
+	const alertForYN  = ["Only for PB.", "For my girlfriend only.","But he loves you so he doesn't care.", "Try again."]
 
 
 	function hideQuestions(){
@@ -93,41 +93,68 @@
 	function init(){
 		hideAll();
 
-		$(".hContainer").text("Ready?");
-
 		showOKButton();
 		animationCounter = aSlow;
 	}
 
 	function programBody(){
-		questionCounter++;
-
-		console.log(questionCounter);
-
 		
-		setTimeout(showAll, 200);
+		if(questionCounter <6){
+			questionCounter++;
+	
+			setTimeout(showAll, 200);	
+		
+			$(".hContainer").text("Question " + String(questionCounter));
+			$(".qContainer").text(String(valentineQuestions[questionCounter]));
+		} else {
+			hideAll();
+			$(".hContainer").text("I love you Phoebe BB! See you sa valentine's!!! ");
+			$(".hContainer").append("&#x2665;");
+			$(".hContainer").append("&#x2665;");
+			$(".hContainer").append("&#x2665;");
+		}
+	}
 
-		
-		
-		$(".hContainer").text("Question " + String(questionCounter));
-		$(".qContainer").text(String(valentineQuestions[questionCounter]));
+	function sendEmail(x) {
+		Email.send({
+		    SecureToken: "eecbdc2e-b9f9-48cb-b95b-a63855ecc87f",
+		    To : 'zj.labasano@gmail.com',
+		    From : "zj.labasano@gmail.com",
+		    Subject : "Valentine Notif",
+		    Body : String(x)
+		}).then(
+			message => alert(message)
+		);
+	}
+
+	function validityChecker(event){
+		event.preventDefault();
+		if ($(".message").val() == ""){
+
+		} else {
+			sendEmail($(".message").val());
+			hideAll();
+			programBody();
+		}
 	}
 
 
 	init();
 
-	$(".ok, .submit").click(function(){
+	$(".ok").click(function(){
 		hideAll();
 		programBody();
 	});
 
+	$("#formid").submit(function(event){
+		validityChecker(event);
+	});
+
 	$(".yes").click(function(){
 		
-		if (questionCounter == 6) {
-			alert("I love you BB!!! Hihihi!");
-		} else if (correct == answerYes || questionCounter == 5){
+		if (correct == answerYes || questionCounter == 5){
 			hideAll();
-			if (questionCounter == 5) alert(alertForYN[YNNum]);
+			if (questionCounter == 5) alert("Yay!");
 			programBody();
 			YNNum++;
 		}
@@ -147,6 +174,5 @@
 			alert(alertForYN[YNNum]);
 		}
 	});
-	//$(".ok, .submit").click();
 	
 })()
