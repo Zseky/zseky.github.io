@@ -1,0 +1,124 @@
+<!DOCTYPE html> 
+<head>
+	<title>
+		Study Buddy
+	</title>
+	<link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+	<style>	
+		.largerDiv{
+			position:fixed;
+			width: 50%;
+			left: 5%;
+			top: 20%;
+
+		}
+
+		.inputBar{
+			display: table;
+			margin: auto;
+			width: 100%;
+		}
+
+		.hoursInput, .minutesInput, .secondsInput{
+			width: 100%;
+			display: table-cell;
+			text-align: center;
+			font-size: 600%;
+
+		}
+		.colon {
+			display:table-cell;
+			text-align: center;
+			font-size: 550%;
+		}
+		.inputButs{
+			margin-top: 2%;
+		}
+
+		.togglePauseTimer{
+			width: 18%;
+		}
+		.outputBar{
+			width: 20%;
+			display: table;
+			text-align: center
+		}
+
+		.hoursOutput, .minutesOutput, .secondsOutput{
+			width: auto;
+			display: table-cell;
+			text-align: center;
+			font-size: 700%;
+		}
+
+		.startTimer, .reset{
+			text-align:center;
+			margin: autos;
+		}
+
+		.miniLabel{
+			font-size: 150%;
+		}
+	</style>
+</head>
+<body>
+	<div class= "largerDiv">
+		<form id = "formid">
+			<table class = "inputBar">
+				<tr>
+					<td><input class = "hoursInput" type = "number" max= "99" min= "00" placeholder = "00" /></td>
+					<td><label class = "colon">:</label> </td>
+					<td><input class = "minutesInput" type = "number" max= "60" min= "00" placeholder = "00" /></td>
+					<td><label class = "colon">:</label> </td>
+					<td><input class = "secondsInput" type = "number" max= "60" min= "00" placeholder = "00" /></td>
+				</tr>
+				<tr>
+					<td><label class = "miniLabel">hours</label> </td>
+					<td><label class = "colon"></label> </td>
+					<td><label class = "miniLabel">minutes</label> </td>
+					<td><label class = "colon"></label> </td>
+					<td><label class = "miniLabel">seconds</label> </td>
+				</tr>
+			</table>
+	
+			
+			<div class = "inputButs">
+				<button class = "startTimer btn btn-success" >Start</button>
+				<input type="reset" class = "btn btn-light"> 
+			</div>
+		</form>
+		<div class = "outputAll">
+			<table class = "outputBar">
+					<tr>
+						<td><p class = "hoursOutput">00</p></td>
+						<td><p class = "colon">:</p> </td>
+						<td><p class = "minutesOutput">00</p></td>
+						<td><p class = "colon">:</p> </td>
+						<td><p class = "secondsOutput">00</p></td>
+					</tr>
+					<tr>
+						<td><label class = "miniLabel">hours</label> </td>
+						<td><label class = "colon"></label> </td>
+						<td><label class = "miniLabel">minutes</label> </td>
+						<td><label class = "colon"></label> </td>
+						<td><label class = "miniLabel">seconds</label> </td>
+					</tr>
+			</table>
+			<div class = "outputButs">
+				<button class = "togglePauseTimer btn btn-light">Pause</button>
+				<button class = "stopTimer btn btn-danger">Stop</button>
+				<button class = "resetTimer btn btn-light">Reset</button>
+			</div>
+		</div>
+
+	</div>
+
+	<script type = "module" src = "studyBuddyJS/ctdtm.js"></script>
+	<script src="https://apis.google.com/js/api.js"></script>
+	<script src = "studyBuddyJS/musicPlayer.js"></script>
+
+	
+
+</body>
+</html>

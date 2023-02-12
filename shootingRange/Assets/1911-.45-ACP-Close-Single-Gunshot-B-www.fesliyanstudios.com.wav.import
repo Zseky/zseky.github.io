@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/1911-.45-ACP-Close-Single-Gunshot-B-www.fesliyanstudios.com.wav-25fc17e576a4507530ec003ba25bbfbc.sample"
+
+[deps]
+
+source_file="res://Assets/1911-.45-ACP-Close-Single-Gunshot-B-www.fesliyanstudios.com.wav"
+dest_files=[ "res://.import/1911-.45-ACP-Close-Single-Gunshot-B-www.fesliyanstudios.com.wav-25fc17e576a4507530ec003ba25bbfbc.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0

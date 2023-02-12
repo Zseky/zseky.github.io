@@ -130,11 +130,12 @@
 	function validityChecker(event){
 		event.preventDefault();
 		if ($(".message").val() == ""){
-
+			
 		} else {
-			sendEmail($(".message").val());
+			console.log($(".message").val());
+			//sendEmail($(".message").val());
 			hideAll();
-			programBody();
+			//programBody();
 		}
 	}
 
